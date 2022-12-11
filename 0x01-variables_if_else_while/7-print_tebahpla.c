@@ -6,11 +6,12 @@
   */
 int main(void)
 {
-	int i;
+	char lower = 'z';
 
-	for (i = 222; i > 96; i--)
+	while (lower >= 'a')
 	{
-		putchar(i);
+		putchar(lower);
+		lower--;
 	}
 	putchar('\n');
 	return (0);

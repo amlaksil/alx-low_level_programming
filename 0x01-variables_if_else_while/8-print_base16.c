@@ -1,22 +1,25 @@
 #include <stdio.h>
 
 /**
-   * main - Prints numbers between 0 to 9 and letters between a to f.
-   *
-   * Return: Always 0 (Success)
-   */
+ * main - Prints all the numbers of base 16 in lowercase
+ *
+ * Return: always 0 (Sucess)
+ */
 int main(void)
 {
-		int i;
+	char lower = 'a';
+	int num = 0;
 
-		for (i = 48; i < 58; i++)
+	while (lower <= 'f')
+	{
+		while (num < 10)
 		{
-			putchar(i);
+			putchar((num) + '0');
+			num++;
 		}
-		for (i = 97; i < 103; i++)
-		{
-			putchar(i);
-			}
+		putchar(lower);
+		lower++;
+	}
 	putchar('\n');
 	return (0);
 }

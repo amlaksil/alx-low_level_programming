@@ -15,8 +15,6 @@ int main(void)
 		while (lower <= 'z')
 		{
 			putchar(lower);
-			if (lower == 'z')
-				putchar(' ');
 			lower++;
 		}
 		putchar(upper);

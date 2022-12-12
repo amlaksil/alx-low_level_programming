@@ -23,7 +23,7 @@ int main(void)
 		}
 		if (i == 9)
 		{
-			k = 1, i = 0;
+			k = 1, i = -1;
 		}
 	}
 	putchar('\n');

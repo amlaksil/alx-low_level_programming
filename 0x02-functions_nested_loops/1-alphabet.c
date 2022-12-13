@@ -1,6 +1,6 @@
 #include "main.h"
 #include <unistd.h>
-#include <String.h>
+#include <string.h>
 /**
  * main - check the code
  *

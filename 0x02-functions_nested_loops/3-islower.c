@@ -3,7 +3,8 @@
 /**
   * _islower - Cheks for lowercase character
   *
-  * c - is int parameter
+  * @c: The character in ASCII code
+  *
   * Return: 1 if c is lower if not 0
   */
 int _islower(int c)
@@ -16,4 +17,5 @@ int _islower(int c)
 	{
 		return (1);
 	}
+	_putchar('\n');
 }

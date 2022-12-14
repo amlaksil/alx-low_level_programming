@@ -11,7 +11,7 @@ int print_last_digit(int n)
 {
 	int lastnum;
 
-	if (n < 0)
+	if (n < 0 && n != INT_MIN)
 	{
 		n = -n;
 	}

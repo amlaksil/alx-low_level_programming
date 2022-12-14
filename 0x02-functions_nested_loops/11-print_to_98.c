@@ -9,7 +9,9 @@ void print_to_98(int n)
 {
 	for (n = 1; n <= 98; n++)
 	{
-		_putchar(n + '0');
+		_putchar((n) + '0');
+		_putchra((','));
+		_putchar((' '));
 	}
 	_putchar('\n');
 }

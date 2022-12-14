@@ -50,7 +50,7 @@ void times_table(void)
 		_putchar(' ');
 	}
 	_putchar('\n');
-	for (k = 0; K <= 54; k += 6)
+	for (k = 0; k <= 54; k += 6)
 	{
 		_putchar((k) + '0');
 		_putchar(',');
@@ -77,6 +77,6 @@ void times_table(void)
 		_putchar(',');
 		_putchar(' ');
 	}
-	_putchar('\n')
+	_putchar('\n');
 
 

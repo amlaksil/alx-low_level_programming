@@ -5,7 +5,7 @@
  *
  * @n: The character in ASCII code
  *
- * Return: 0 (Success)
+ * Return: the value of the last digit (Success)
  */
 int print_last_digit(int n)
 {

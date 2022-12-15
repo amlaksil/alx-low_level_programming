@@ -8,7 +8,7 @@ void times_table(void)
 {
 	int i, k;
 	
-	for (i = 0; i <= 10; i++)
+	for (i = 0; i < 10; i++)
 	{
 		_putchar(0 + '0');
 		_putchar(',');
@@ -22,7 +22,7 @@ void times_table(void)
 		_putchar(' ');
 	}
 	_putchar('\n');
-	for (k = 0; k <= 18; k += 2)
+	for (k = 0; k <= 18; k + 2)
 	{
 		_putchar((k) + '0');
 		_putchar(',');

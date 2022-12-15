@@ -1,1 +1,0 @@
-amlaksil@DESKTOP-OF7AKIJ.1821

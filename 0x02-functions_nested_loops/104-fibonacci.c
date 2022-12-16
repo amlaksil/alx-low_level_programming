@@ -13,6 +13,8 @@ int main(void)
 	{
 		sum = fib1 + fib2;
 		printf("%lu", sum);
+		if (sum == 420196140727489673)
+			break;
 
 		fib1 = fib2;
 		fib2 = sum;

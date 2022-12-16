@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
   * mul - Multiplies two integers
@@ -12,10 +11,9 @@
 
 int mul(int a, int b)
 {
-	int mul;
+	int mulf;
 
 	mul = a * b;
-	printf("%d\n", mul);
 
-	return (0);
+	return (mulf);
 }

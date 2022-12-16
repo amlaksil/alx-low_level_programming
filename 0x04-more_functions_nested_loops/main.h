@@ -1,4 +1,4 @@
-#ifndef  NESTED
+#ifndef NESTED
 #define NESTED
 
 int _putchar(char c);

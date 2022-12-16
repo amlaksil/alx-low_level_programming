@@ -9,18 +9,15 @@ int main(void)
 	int count;
 	unsigned long int fib1 = 0, fib2 = 1, sum = 0;
 
-	for (count = 0; count < 98; count++)
+	for (count = 0; count < 94; count++)
 	{
 		sum = fib1 + fib2;
 		printf("%lu", sum);
-		if (sum == 420196140727489673)
-			break;
-
 		fib1 = fib2;
 		fib2 = sum;
 		sum = 0;
 
-		if (count == 97)
+		if (count == 94)
 			printf("\n");
 		else
 			printf(", ");

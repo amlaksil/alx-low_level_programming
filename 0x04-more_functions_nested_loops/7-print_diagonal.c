@@ -4,6 +4,7 @@
   * print_diagonal - Draws a diagonal line on the terminal
   *
   * @n: The character on ASCII code
+  * Return: void
   */
 void print_diagonal(int n)
 {
@@ -22,7 +23,6 @@ void print_diagonal(int n)
 				_putchar(' ');
 			}
 			_putchar(92);
-			_putchar('$');
 			_putchar('\n');
 		}
 	}

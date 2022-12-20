@@ -15,16 +15,18 @@ char *_strcpy(char *dest, char *src)
 	int i = 0;
 	int j;
 
-	while (*(src + i) != '\0')
+	if (*(src + i) != ('\0'))
 	{
-		i++;
-		if (*(src + i) == '\0')
-			len = i;
-	}
-
-	for (j = 0; j <= len; j++)
-	{
-		*(dest + j) = *(src + j);
+		while (*(src + i) != '\0')
+		{
+			i++;
+			if (*(src + i) == '\0')
+				len = i;
+		}
+		for (j = 0; j <= len; j++)
+		{
+			*(dest + j) = *(src + j);
+		}
 	}
 	return (dest);
 }

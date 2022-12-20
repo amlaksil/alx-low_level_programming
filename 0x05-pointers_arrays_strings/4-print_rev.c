@@ -21,7 +21,7 @@ void print_rev(char *s)
 				j = i;
 		}
 	}
-
+r
 	if (j != 0)
 	{
 		j = j - 1;

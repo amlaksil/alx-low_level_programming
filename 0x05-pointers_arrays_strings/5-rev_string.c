@@ -10,13 +10,14 @@ void rev_string(char *s)
 	int j;
 	int k;
 	char *start, *end, temp;
+
 	if (*s != '\0')
 	{
 		while (*(s + i) != '\0')
 		{
 			i++;
 			if (*(s + i) == '\0')
-				j = i - 1;
+				j = i;
 		}
 		start = s;
 		end = s + j - 1;
@@ -28,6 +29,5 @@ void rev_string(char *s)
 			start++;
 			end--;
 		}
-		_putchar('\n');
 	}
 }

@@ -30,7 +30,7 @@ char *_strncat(char *dest, char *src, int n)
 				length_s = j;
 		}
 
-		for (k = 0; k <= n; k++)
+		for (k = 0; k <= length_s; k++)
 		{
 
 			*(dest + length_d) = *(src + k);

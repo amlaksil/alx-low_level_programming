@@ -22,15 +22,16 @@ char *_strncat(char *dest, char *src, int n)
 			if (*(dest + i) == '\0')
 				length_d = i;
 		}
-
 		while (*(src + j) != '\0')
 		{
 			j++;
 			if (*(src + j) == '\0')
 				length_s = j;
 		}
+		if (n > length_s)
+			n = length_s;
 
-		for (k = 0; k <= n; k++)
+		for (k = 0; k < n; k++)
 		{
 			*(dest + length_d) = *(src + k);
 			length_d++;

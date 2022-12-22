@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * *_strncpy - Copies n number of string
  * @dest: destination pointer
@@ -23,8 +22,11 @@ char *_strncpy(char *dest, char *src, int n)
 			if (*(src + i) == '\0')
 				length_s = i;
 		}
-		if (n > length_s)
-			n = length_s;
+			if (n > length_s)
+		{
+			n = length_s + 1;
+			printf("this is inside if condition: %d\n", n);
+		}
 		for (j = 0; j < n; j++)
 		{
 			*(dest + j) = *(src + j);

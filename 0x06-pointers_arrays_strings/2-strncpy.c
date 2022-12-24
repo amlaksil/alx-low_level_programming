@@ -27,10 +27,10 @@ char *_strncpy(char *dest, char *src, int n)
 			*(dest + j) = *(src + j);
 			j++;
 		}
-		while (length_s < n)
+		while (j < n)
 		{
-			*(dest + length_s) = '\0';
-			length_s++;
+			*(dest + j) = '\0';
+			j++;
 		}
 	}
 	return (dest);

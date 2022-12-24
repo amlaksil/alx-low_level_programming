@@ -14,7 +14,7 @@ char *_strncpy(char *dest, char *src, int n)
 	int j = 0, i = 0;
 	int length_s;
 
-	if (*s != '\0')
+	if (*src != '\0')
 	{
 		while (*(src + i) != '\0')
 		{

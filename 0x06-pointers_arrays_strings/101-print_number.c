@@ -7,6 +7,12 @@
  */
 void print_number(int n)
 {
-	_putchar((n) + '0');
+	if (n >= 0)
+		_putchar((n) + '0');
+	else
+	{
+		_putchar('-');
+		_putchar((-n) + '0');
+	}
 
 }

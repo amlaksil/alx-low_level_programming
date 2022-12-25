@@ -10,27 +10,22 @@
 int _strcmp(char *s1, char *s2)
 {
 	int i;
-	int len, j = 0;
-
-	while (*(s1 + j) != '\0')
-	{
-		j++;
-		if (*(s1 + j) == '\0')
-			len = j;
-	}
+	int val;
 
 	for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++)
 	{
 		if (s1[i] > s2[i])
-			return (15);
-
-		if (s1[i] < s2[i])
-			return (-15);
+			val = 1;
+		else if (s1[i] < s2[i])
+			val = -1;
+		else
+			continue;
 	}
 	for (i = 0; s1[i] == s2[i]; i++)
 	{
-		if (i == len)
-			return (0);
+		val = 0;
+		if (s1[i] == '\0')
+			break;
 	}
-	return (0);
+	return (val);
 }

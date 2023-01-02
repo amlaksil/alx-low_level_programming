@@ -1,0 +1,4 @@
+#include "main."
+
+/**
+ * _strspn

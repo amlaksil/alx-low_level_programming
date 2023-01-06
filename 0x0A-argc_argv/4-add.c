@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	char num[] = "0123456789";
 
 	if (argc == 1)
-		printf("%c\n", '0');
+		printf("%d\n", 0);
 	else
 	{
 		for (i = 1; i < argc ; i++)

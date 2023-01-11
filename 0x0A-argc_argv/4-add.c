@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	unsigned int i, j, m, sum = 0;
+	int i, j, m, sum = 0;
 	char num[] = "0123456789";
 
 	if (argc == 1)

@@ -3,7 +3,7 @@
 
 /**
  * main - adds positive numbers
- * @argc: contains the number of arguments passed to the program
+ * @argc: the number of arguments passed
  * @argv: one-demensional array of strings
  *
  * Return: 1 if error occur if not 0
@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i, j, m, sum = 0;
+	unsigned int i, j, m, sum = 0;
 	char num[] = "0123456789";
 
 	if (argc == 1)

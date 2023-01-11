@@ -3,23 +3,25 @@
 
 /**
  * alloc_grid - returns a pointer to a 2 dimensional array of integers
- * @width: number of column
- * @height: number of row
+ * @width: number of columns
+ * @height: number of rows
  *
  * Return: NULL if width or height is 0 or negative
  */
 
 int **alloc_grid(int width, int height)
 {
-	int i, j;
-	int **ptr;
+	int i, j, **ptr;
 
 	if (width < 1 || height < 1)
 		return (NULL);
-	ptr = malloc(sizeof(int *) * height);
+	ptr = malloc(height * sizeof(int *));
 
 	if (ptr == NULL)
+	{
+		free(ptr);
 		return (NULL);
+	}
 	for (i = 0; i < height; i++)
 	{
 		ptr[i] = malloc(width * sizeof(int));
@@ -27,6 +29,7 @@ int **alloc_grid(int width, int height)
 		{
 			while (--i >= 0)
 				free(ptr[i]);
+			free(ptr);
 			return (NULL);
 		}
 	}

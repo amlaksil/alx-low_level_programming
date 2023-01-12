@@ -6,7 +6,7 @@
  * @nmemb: size of array
  * @size: the size of array element
  *
- * Return: pointer
+ * Return: a pointer
  */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
@@ -21,7 +21,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (p == NULL)
 		return (NULL);
-	for (i = 0; i < nmemb; i++)
+
+	for (i = 0; i < (nmemb * size); i++)
 	{
 		p[i] = 0;
 	}

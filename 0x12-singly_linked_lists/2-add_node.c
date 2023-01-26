@@ -9,7 +9,7 @@
  * str needs to be duplicated
  */
 
-list_t *add_node(list_t **head, char str)
+list_t *add_node(list_t **head, char *str)
 {
 	list_t *new;
 	size_t count;

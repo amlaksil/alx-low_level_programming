@@ -1,0 +1,17 @@
+#include "dog.h"
+#include <stdlib.h>
+
+/**
+ * free_dog - a function that frees dogs
+ * @d: a pointer to struct dog
+ *
+ */
+
+void free_dog(dog_t *d)
+{
+	dog_t i;
+
+	for (i = 0; i < sizeof(dog_t); i++)
+		free(d[i]);
+	free(d);
+}

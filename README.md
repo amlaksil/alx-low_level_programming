@@ -1,2 +1,2 @@
-ALX low level programming
-Basics of C
+# ALX low level programming
+## Basics of C

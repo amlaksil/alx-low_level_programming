@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * clear_bit - set the value of a bit to 0 at a given index
@@ -16,6 +16,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 
 	ashift = 1 << index;
-	*n = (*n & ~ashift);
+	*n = (*n & (~ashift));
+
 	return (1);
 }

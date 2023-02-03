@@ -15,6 +15,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned int i = 0, k, j = 0;
 	char a[64];
 
+	if (n == 0 && index < 64)
+		return (0);
 	while (q != 0)
 	{
 		q = n / 2;

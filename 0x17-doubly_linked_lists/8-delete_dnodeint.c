@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  * delete_dnodeint_at_index - deletes the node at the given index
  * @head: pointer to the first element in the list
@@ -17,8 +16,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	last_node = dlistint_len(current);
 	if (index == 0)
 	{
-		temp = ptr->next, dtemp = ptr, ptr->prev = NULL;
-		free(dtemp), *head = temp;
+		handle_index_0(head, last_node);
 		return (1);
 	}
 	else if (last_node == index)
@@ -34,7 +32,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			}
 		}
 	}
-	else
+	else if (index > 0 && index < last_node)
 	{
 		while (ptr != NULL)
 		{
@@ -69,4 +67,30 @@ size_t dlistint_len(const dlistint_t *h)
 		head = head->next;
 	}
 	return (num_node);
+}
+
+/**
+ * handle_index_0 - handle element delation at index = 0
+ * @head: points to the first element in the list
+ * @num_node: number of nodes
+ *
+ * Return: 1
+ */
+int handle_index_0(dlistint_t **head, size_t num_node)
+{
+	dlistint_t *ptr = *head, *temp, *dtemp;
+
+	if (num_node == 1)
+	{
+		free(ptr);
+		*head = NULL;
+		return (1);
+	}
+	temp = ptr->next;
+	dtemp = ptr;
+	ptr = temp;
+	ptr->prev = NULL;
+	free(dtemp);
+	*head = temp;
+	return (1);
 }

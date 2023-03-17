@@ -14,9 +14,9 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (ptr == NULL)
 		return (-1);
 	last_node = dlistint_len(current);
-	if (index == 0)
+	if (index == 0 || (last_node == 2 && (index == 0 || index == 1)))
 	{
-		handle_index_0(head, last_node);
+		handle_index_0(head, last_node, index);
 		return (1);
 	}
 	else if (last_node == index)
@@ -73,10 +73,11 @@ size_t dlistint_len(const dlistint_t *h)
  * handle_index_0 - handle element delation at index = 0
  * @head: points to the first element in the list
  * @num_node: number of nodes
+ * @index: the position where element is going to be delated
  *
  * Return: 1
  */
-int handle_index_0(dlistint_t **head, size_t num_node)
+int handle_index_0(dlistint_t **head, size_t num_node, size_t index)
 {
 	dlistint_t *ptr = *head, *temp, *dtemp;
 
@@ -84,6 +85,15 @@ int handle_index_0(dlistint_t **head, size_t num_node)
 	{
 		free(ptr);
 		*head = NULL;
+		return (1);
+	}
+	if (num_node == 2 && index == 1)
+	{
+		dtemp = ptr->next;
+		temp = ptr;
+		ptr->next = NULL;
+		free(dtemp);
+		*head = temp;
 		return (1);
 	}
 	temp = ptr->next;

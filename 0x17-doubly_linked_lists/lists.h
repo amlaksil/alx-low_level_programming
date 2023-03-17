@@ -18,7 +18,7 @@ typedef struct dlistint_s
 	struct dlistint_s *next;
 } dlistint_t;
 
-int handle_index_0(dlistint_t **head, size_t num_node);
+int handle_index_0(dlistint_t **head, size_t num_node, size_t index);
 size_t print_dlistint(const dlistint_t *h);
 size_t dlistint_len(const dlistint_t *h);
 dlistint_t *add_dnodeint(dlistint_t **head, const int n);

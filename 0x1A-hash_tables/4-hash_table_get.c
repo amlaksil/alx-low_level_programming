@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-
+#include <stdio.h>
 /**
   * hash_table_get - find the value associated with a key
   * @ht: hash table which may contains the value we look for

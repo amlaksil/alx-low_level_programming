@@ -1,6 +1,7 @@
 #include "hash_tables.h"
 #include <stdlib.h>
 #include <string.h>
+
 /**
   * hash_table_set - adds element to the hash table
   * @ht: a pointer points to the array of hash table
@@ -41,8 +42,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			return (0);
 
 		ht->array[index] = ptr;
-		ptr->key = (char *)key;
-		ptr->value = (char *)value;
+		strcpy(ptr->key, (char *)key);
+		strcpy(ptr->value, (char *)value);
 		ptr->next = NULL;
 	}
 	else
@@ -67,11 +68,23 @@ int handle_collision(hash_table_t *h, char *key, char *v, unsigned long int dx)
 	hash_node_t *ptr;
 	hash_node_t *collied;
 
+	ptr = h->array[dx];
+
+	if (strcmp(h->array[dx]->key, key) == 0)
+	{
+		/* The key is already present so we have to update its content */
+		h->array[dx]->value = malloc(strlen(v) + 1);
+		if (h->array[dx]->value == NULL)
+			return (0);
+
+		strcpy(h->array[dx]->value, (char *)v);
+
+		return (1);
+	}
 	collied = malloc(sizeof(hash_node_t));
 	if (collied == NULL)
 		return (0);
 
-	ptr = h->array[dx];
 	collied->key = malloc(strlen(key) + 1);
 	if (collied->key == NULL)
 		return (0);
@@ -80,10 +93,11 @@ int handle_collision(hash_table_t *h, char *key, char *v, unsigned long int dx)
 	if (collied->value == NULL)
 		return (0);
 
-	collied->key = key;
-	collied->value = v;
+	strcpy(collied->key, key);
+	strcpy(collied->value, v);
 	collied->next = ptr;
 	h->array[dx] = collied;
+	ptr = h->array[dx];
 
 	return (1);
 }

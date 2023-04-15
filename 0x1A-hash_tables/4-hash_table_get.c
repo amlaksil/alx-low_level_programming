@@ -36,7 +36,6 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 				 */
 				if (strcmp(ptr->key, key) == 0)
 				{
-					printf("got it\n");
 					return (ptr->value);
 				}
 				ptr = ptr->next;

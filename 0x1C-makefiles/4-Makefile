@@ -1,0 +1,28 @@
+CC=gcc
+SRC=.c
+OBJ=.o
+NAME=school
+RM=rm
+CFLAGS=-Wall -Werror -Wextra -pedantic
+.PHONY: all
+all: $(NAME)
+# the use of 'PHONY' target is to avoid a conflict with a file of the same name
+# and to improve performance.
+main$(OBJ) $(NAME)$(OBJ): m.h
+$(NAME): m.h $(NAME)$(OBJ) main$(OBJ)
+	$(CC) main$(OBJ) $(NAME)$(OBJ) -o $(NAME)
+
+clean:
+	$(RM) -f $(NAME) *~
+
+oclean:
+	$(RM) -f main$(OBJ) $(NAME)$(OBJ)
+
+fclean:
+	$(RM) -f $(NAME) *~
+	$(RM) -f main$(OBJ) $(NAME)$(OBJ)
+
+re:
+	$(CC) $(CFLAGS) -c -o main$(OBJ) main$(SRC)
+	$(CC) $(CFLAGS) -c -o $(NAME)$(OBJ) $(NAME)$(SRC)
+	$(CC) main$(OBJ) $(NAME)$(OBJ) -o $(NAME)

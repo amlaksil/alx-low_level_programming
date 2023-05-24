@@ -2,20 +2,19 @@ CC=gcc
 SRC=main.c school.c
 OBJ=main.o school.o
 NAME=school
-RM=rm
+RM=rm -f
 CFLAGS=-Wall -Werror -Wextra -pedantic
 .PHONY: all clean oclean fclean re
-all: $(NAME)
 # the use of 'PHONY' target is to avoid a conflict with a file of the same name
 # and to improve performance.
 all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) -f $(NAME) *~
+	$(RM) $(NAME) *~
 
 oclean:
-	$(RM) -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean oclean
 

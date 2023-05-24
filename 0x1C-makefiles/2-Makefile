@@ -1,0 +1,16 @@
+CC=gcc
+SRC=.c
+OBJ=.o
+NAME=school
+.PHONY: all
+# the use of 'PHONY' target is to avoid a conflict with a file of the same name
+# and to improve performance.
+all: $(NAME)
+# It is not necessary to spell out the recipes for compiling the individual C
+# source files, because make can figure them out: it has implicit rule for
+# updating a '.o' file from a correspondingly name '.c' file. expample, it will
+# use the recipe 'gcc -c main.c -o main.o' to compile main.c into main.o
+main$(OBJ) $(NAME)$(OBJ): m.h
+# m.h is given as a prerequisite of all object files
+$(NAME): main$(OBJ) m.h $(NAME)$(OBJ)
+	$(CC) main$(OBJ) $(NAME)$(OBJ) -o $(NAME)
